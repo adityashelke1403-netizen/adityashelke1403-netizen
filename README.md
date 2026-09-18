@@ -1,349 +1,89 @@
-# Aditya Shelke
+<div align="center">
 
-### Software Engineer · Distributed Systems · Backend · Full Stack · Applied AI
+# 👋 Hey, I'm Aditya Shelke
 
-I build software that has to keep working after the happy path ends.
+### Backend • Distributed Systems • Full Stack • Applied AI
 
-My work sits across **distributed backend systems, product engineering, cloud infrastructure, and applied AI** — with a strong focus on reliability, observability, clean interfaces, and systems that are easy for other engineers to reason about.
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1000&center=true&vCenter=true&width=850&lines=Building+reliable+systems+that+survive+the+unhappy+path;Backend+%7C+Distributed+Systems+%7C+Cloud;Shipping+software+with+correctness%2C+clarity%2C+and+observability" alt="Typing SVG" />
 
-Currently working on backend systems in the payments space, where correctness, idempotency, failure recovery, and operational visibility aren't nice-to-haves — they're part of the product.
+</div>
 
 ---
 
-## `> engineering philosophy`
+### ⚡ About Me
+
+Software Engineer focused on **backend systems, distributed architectures, cloud infrastructure, and production-grade AI**.
+
+I enjoy solving problems around **reliability, idempotency, async processing, observability, system design, and performance**.
+
+> **Build systems that are easy to operate, not just easy to demo.**
+
+---
+
+### 🛠 Tech Stack
+
+<div align="center">
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Kafka](https://img.shields.io/badge/Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white)
+
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)
+![OpenTelemetry](https://img.shields.io/badge/OpenTelemetry-000000?style=for-the-badge&logo=opentelemetry&logoColor=white)
+
+</div>
+
+---
+
+### 🚀 What I Build
+
+```text
+Distributed Systems  →  Kafka • Redis • Async Processing • Idempotency
+Backend Engineering  →  Python • FastAPI • Java • REST • gRPC
+Full Stack           →  React • TypeScript • PostgreSQL
+Cloud & Infra        →  AWS • Docker • Kubernetes
+Applied AI           →  LangGraph • RAG • Agentic Systems
+```
+
+---
+
+### 🧠 Engineering Principles
 
 ```text
 Correctness > cleverness
 Observability > assumptions
-Simple interfaces > hidden complexity
 Measure before optimizing
 Design for failure
-Ship, learn, improve
-```
-
-I like systems where the interesting problems happen between components:
-
-- duplicate events
-- partial failures
-- retries and timeouts
-- concurrent state
-- cache consistency
-- schema evolution
-- service boundaries
-- backpressure
-- degraded dependencies
-- production debugging
-
-That usually means thinking beyond:
-
-> "Does the code work?"
-
-and asking:
-
-> "What happens when this runs across multiple services, machines, regions, retries, and failure modes?"
-
----
-
-## `> current stack`
-
-```yaml
-languages:
-  - Python
-  - Java
-  - TypeScript
-  - JavaScript
-
-backend:
-  - FastAPI
-  - Spring Boot
-  - Node.js
-  - REST
-  - gRPC
-  - WebSockets
-
-frontend:
-  - React
-  - Angular
-
-distributed_systems:
-  - Kafka
-  - Redis
-  - Event Driven Architecture
-  - Idempotent Processing
-  - Async Workers
-
-data:
-  - PostgreSQL
-  - SQL
-
-infrastructure:
-  - AWS
-  - Docker
-  - Kubernetes
-
-observability:
-  - OpenTelemetry
-  - Grafana
-  - Metrics
-  - Tracing
-  - SLOs
-
-applied_ai:
-  - LangGraph
-  - LangChain
-  - RAG
-  - MCP
-  - LLM Agents
+Keep interfaces simple
+Ship → Learn → Improve
 ```
 
 ---
 
-# Selected Engineering Work
+### 📊 GitHub
 
-## 🧩 Conflux
+<div align="center">
 
-**Offline-first collaborative workspace engineered around distributed state and eventual convergence.**
+<img height="165" src="https://github-readme-stats.vercel.app/api?username=adityashelke1403-netizen&show_icons=true&hide_border=true&rank_icon=github" />
+<img height="165" src="https://github-readme-streak-stats.herokuapp.com/?user=adityashelke1403-netizen&hide_border=true" />
 
-Not another CRUD collaboration app.
-
-Conflux explores what happens when multiple users modify shared state while clients are offline, reconnect out of order, and communicate through multiple application nodes.
-
-### Architecture
-
-```text
-            ┌──────────────┐
-            │ React Client │
-            └──────┬───────┘
-                   │
-          IndexedDB Mutation Queue
-                   │
-             WebSocket Layer
-                   │
-        ┌──────────▼──────────┐
-        │   Fastify Nodes     │
-        └──────────┬──────────┘
-                   │
-             Redis Pub/Sub
-                   │
-       ┌───────────▼───────────┐
-       │ PostgreSQL Event Log  │
-       └───────────────────────┘
-```
-
-**Engineering focus**
-
-- Hand-implemented **RGA CRDT**
-- Offline mutation queue with deterministic replay
-- Property-based convergence testing
-- Append-only event log
-- Snapshot recovery
-- Multi-node synchronization
-- Conflict-free concurrent editing
-- p99 synchronization benchmarking
-
-`TypeScript` `React` `Fastify` `WebSockets` `PostgreSQL` `Redis` `Docker`
-
----
-
-## 🤖 Patchwork
-
-**Autonomous code-repair system that treats an LLM as one component inside a reliable execution engine.**
-
-Given a repository and an issue, Patchwork can inspect the codebase, form a repair plan, modify files, execute tests, inspect failures, iterate, and produce a reviewable patch.
-
-```text
-Issue
-  │
-  ▼
-Planner
-  │
-  ▼
-Repository Explorer
-  │
-  ▼
-Sandboxed Executor
-  │
-  ├── Modify Code
-  ├── Run Tests
-  ├── Observe Failure
-  └── Retry
-  │
-  ▼
-Patch + Explanation
-```
-
-The interesting part isn't the prompt.
-
-It's everything around it.
-
-**Engineering focus**
-
-- Sandboxed execution
-- Persistent agent state
-- Idempotent step execution
-- Retry + exponential backoff
-- Cancellation and timeouts
-- Dependency-aware execution
-- Failure recovery
-- Structured tool interfaces
-- Execution telemetry
-- Autonomous test-feedback loops
-
-`Python` `Docker` `GitHub API` `LLMs` `Agentic Systems`
-
----
-
-# Production Engineering
-
-Some areas I spend a lot of time thinking about:
-
-### Event processing
-
-```text
-event_received()
-      ↓
-validate()
-      ↓
-deduplicate()
-      ↓
-process()
-      ↓
-persist()
-      ↓
-acknowledge()
-```
-
-Because in distributed systems:
-
-```text
-"processed once"
-```
-
-and
-
-```text
-"delivered once"
-```
-
-are very different guarantees.
-
-### Observability
-
-Logs tell you **what happened**.
-
-Metrics tell you **how often it happens**.
-
-Traces tell you **where the time went**.
-
-Good production systems need all three.
-
-### API design
-
-I care about APIs that are:
-
-```text
-Predictable
-Versionable
-Observable
-Idempotent
-Well-bounded
-Hard to misuse
-```
-
----
-
-# Applied AI
-
-I’m interested in AI systems when AI actually earns its place in the architecture.
-
-My preference is:
-
-```text
-LLM
-  +
-Deterministic Software
-  +
-Retrieval
-  +
-Tooling
-  +
-State
-  +
-Guardrails
-  +
-Evaluation
-  +
-Observability
-```
-
-rather than:
-
-```text
-prompt → hope
-```
-
-The model can be probabilistic.
-
-The surrounding system shouldn't be.
-
----
-
-# What I Optimize For
-
-| Area | What matters |
-|---|---|
-| Reliability | predictable behavior under failure |
-| Architecture | clear boundaries and ownership |
-| APIs | contracts that are difficult to misuse |
-| Distributed Systems | idempotency, consistency, retries |
-| Performance | measured bottlenecks, not guesses |
-| Observability | debugging without archaeology |
-| AI Systems | controlled autonomy |
-| Code | boring where boring is better |
-
----
-
-# Currently Exploring
-
-```text
-Distributed Systems
-├── CRDTs
-├── Event-driven architecture
-├── Consensus & consistency
-├── Failure recovery
-└── Multi-node coordination
-
-AI Engineering
-├── Agent runtimes
-├── Tool execution
-├── Sandboxing
-├── Agent state machines
-└── Reliable LLM workflows
-
-Backend Engineering
-├── Service boundaries
-├── High-throughput APIs
-├── Async processing
-├── Caching
-└── Observability
-```
-
----
-
-# Beyond the Code
-
-I earned my **M.S. in Computer Science from Syracuse University** and enjoy working on engineering problems where software architecture has real operational consequences.
-
-I'm especially interested in teams building:
-
-**distributed systems · developer infrastructure · payments · cloud platforms · AI-native products**
+</div>
 
 ---
 
 <div align="center">
 
-### Build systems that are easy to operate, not just easy to demo.
+### 🤝 Connect
 
-[LinkedIn](https://www.linkedin.com/in/adityashelke7/) · Projects · Engineering Notes
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Aditya%20Shelke-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/adityashelke7/)
+
+**Backend • Distributed Systems • Cloud • AI**
 
 </div>
